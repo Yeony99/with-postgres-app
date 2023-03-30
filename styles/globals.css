@@ -5,6 +5,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Source Code Pro', Courier New, monospace;
+  /* 추가 */
+  overflow-y: hidden;
 }
 
 a {
@@ -25,6 +27,11 @@ a:active {
 
 * {
   box-sizing: border-box;
+}
+
+main {
+  overflow-y: scroll;
+  height: calc(100% - 45px);
 }
 
 @media (prefers-color-scheme: dark) {

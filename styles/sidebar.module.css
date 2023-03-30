@@ -1,0 +1,63 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    background-color: #f5f5f5;
+    transition: transform 0.3s
+}
+
+.sidebar.collapsed {
+    transform: translateX(-200px);
+}
+
+.collapseButton {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.disabled {
+    background-color: unset;
+}
+.disabled:hover {
+    background-color: unset;
+}
+
+.submenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+.submenu.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.submenu li {
+    margin-bottom: 5px;
+}
+
+.submenuCollapseButton {
+    margin-left: 5px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
