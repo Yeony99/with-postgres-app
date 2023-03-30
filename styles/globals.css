@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap);
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Source Code Pro', Courier New, monospace;
+  font-family: 'NanumSquare', 'Source Code Pro', Courier New, monospace;
   /* 추가 */
   overflow-y: hidden;
 }
@@ -31,7 +32,8 @@ a:active {
 
 main {
   overflow-y: scroll;
-  height: calc(100% - 45px);
+  height: calc(100% - 55px);
+  padding: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,4 +45,54 @@ main {
     color: rgb(200, 200, 200);
     background: rgb(30, 30, 30);
   }
+}
+
+/* 추가 */
+
+.user-btn {
+  background-color: white;
+  font-size: 1.1rem;
+  font-family: "Lato";
+  border: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 3;
+  background: #fafafa !important;
+  box-shadow: 2px 2px 4px 0 rgb(51 51 51 / 30%);
+}
+
+.dropdown ul {
+  padding: 1rem 8px;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  background: #fff;
+}
+
+.dropdown ul li {
+  display: block;
+  padding: 0 26px;
+  border-radius: 4px;
+  color: #21254a;
+  line-height: 34px;
+  white-space: nowrap;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.dropdown ul li:hover {
+  font-weight: 700;
+  background: #f2f2f2;
 }

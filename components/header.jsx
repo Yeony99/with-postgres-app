@@ -2,9 +2,9 @@ import styles from "../styles/header.module.css";
 
 const HeaderBar = ({children}) => {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             {children}
-        </div>
+        </header>
     )
 }
 
