@@ -1,11 +1,14 @@
+import {faHome, faChartArea, faUserAstronaut, faAddressBook} from "@fortawesome/free-solid-svg-icons"
 export const menuItems = [
     {
       name: 'Home',
       link: '/',
+      icon: faHome
     },
     {
       name: 'Dashboard',
       link: '/dashboard',
+      icon: faChartArea,
       submenu: [
         {
           name: 'Overview',
@@ -24,6 +27,7 @@ export const menuItems = [
     {
       name: 'Profile',
       link: '/profile',
+      icon: faUserAstronaut,
       submenu: [
         {
           name: 'Edit Profile',
@@ -38,6 +42,7 @@ export const menuItems = [
     {
       name: 'Contact Us',
       link: '/contact',
+      icon: faAddressBook
     },
   ];
   

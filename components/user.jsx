@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UserDropDown from "./userDropDown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const User = ({ children }) => {
-    const [toggleDropdown, setToggleDropdown] = useState(false);
-    const handleToggle = (e) => {
-        console.log("handleToggle called");
-      e.preventDefault();
-      e.stopPropagation();
-      setToggleDropdown(prev => !prev);
-    };
-    const closeToggle = (e) => {
-        e.preventDefault();
-        console.log('dddd')
-      setToggleDropdown(false);
-    };
-
-    
-  useEffect(() => {
-    console.log(toggleDropdown);
-  }, [toggleDropdown]);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
+  const handleToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setToggleDropdown((prev) => !prev);
+  };
+  const closeToggle = (e) => {
+    e.preventDefault();
+    setToggleDropdown(false);
+  };
 
   return (
     <>
-      <button className="user-btn" onClick={handleToggle}>USER</button>
+      <button className="user-btn" onClick={handleToggle}>
+        <FontAwesomeIcon icon={faUser} />&nbsp;
+        USER
+      </button>
       {toggleDropdown && <UserDropDown closeToggle={closeToggle} />}
     </>
   );

@@ -49,6 +49,20 @@ main {
 
 /* 추가 */
 
+.fold-btn {
+  border: none;
+  border-radius: 0.75rem 0px 0px 0.75rem;
+  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  background-color: #eee;
+}
+.fold-btn:hover {
+  background-color: #d1d1d1;
+  cursor: pointer;
+}
+.fold-btn > button {
+  all: unset;
+}
+
 .user-btn {
   background-color: white;
   font-size: 1.1rem;
@@ -58,6 +72,10 @@ main {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 1.5rem;
+}
+
+.user-btn:hover {
+  background-color: #eee;
 }
 
 
