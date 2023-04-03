@@ -1,7 +1,7 @@
-import SideBar from "./sidebar";
-import HeaderBar from "./header";
-import { menuItems } from "./menu";
-import User from "./user"
+import SideBar from "../components/sidebar";
+import HeaderBar from "../components/header";
+import { menuItems } from "../components/menu";
+import User from "../components/user"
 
 export default function Layout({ children }) {
   return (
