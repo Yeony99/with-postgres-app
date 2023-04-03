@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-pro-sidebar/dist/index.js b/node_modules/react-pro-sidebar/dist/index.js
+index 9d6bc60..66a11e6 100644
+--- a/node_modules/react-pro-sidebar/dist/index.js
++++ b/node_modules/react-pro-sidebar/dist/index.js
+@@ -5284,7 +5284,7 @@ var SubMenuFR = function (_a, ref) {
+             }
+         }
+     };
+-    React__default["default"].useLayoutEffect(function () {
++    React__default["default"].useEffect(function () {
+         setTimeout(function () { return popperInstance === null || popperInstance === void 0 ? void 0 : popperInstance.update(); }, transitionDuration);
+         if (collapsed && level === 0) {
+             setOpenWhenCollapsed(false);
