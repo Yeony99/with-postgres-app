@@ -1,6 +1,14 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
 import AuthLayout from "../../components/auth/layout";
 
 export default function Login() {
+  const router = useRouter();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
   return (
     <AuthLayout>
       <div className="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
@@ -10,7 +18,7 @@ export default function Login() {
             action="#"
             method="POST"
           >
-             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Brand Name
             </h2>
             <input type="hidden" name="remember" value="true" />
@@ -20,6 +28,8 @@ export default function Login() {
                   Email address
                 </label>
                 <input
+                  value={user.email}
+                  onChange={(e) => setUser({ ...user, email: e.target.value })}
                   id="email-address"
                   name="email"
                   type="email"
@@ -32,16 +42,20 @@ export default function Login() {
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
-                  </label>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    required
-                    className="ps-2 relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    placeholder="비밀번호"
-                  />
+                </label>
+                <input
+                  value={user.password}
+                  onChange={(e) =>
+                    setUser({ ...user, password: e.target.value })
+                  }
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="ps-2 relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="비밀번호"
+                />
               </div>
             </div>
 
@@ -86,6 +100,7 @@ export default function Login() {
               <a
                 href="#"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
+                onClick={() => router.push("/auth/join")}
               >
                 가입하기
               </a>
