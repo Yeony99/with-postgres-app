@@ -17,7 +17,7 @@ const UserDropDown = ({ closeToggle }) => {
   return (
     <div className="dropdown" ref={ref}>
       <ul>
-        <li>
+        <li className="hover:bg-blue-50">
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
             <div>
               <FontAwesomeIcon icon={faIdBadge} />
@@ -27,7 +27,7 @@ const UserDropDown = ({ closeToggle }) => {
             </span>
           </div>
         </li>
-        <li>
+        <li className="hover:bg-blue-50">
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
             <div>
               <FontAwesomeIcon icon={faArrowRightToBracket || faArrowRightFromBracket} />

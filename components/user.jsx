@@ -17,7 +17,7 @@ const User = ({ children }) => {
 
   return (
     <>
-      <button className="user-btn" onClick={handleToggle}>
+      <button className="user-btn hover:bg-blue-50" onClick={handleToggle}>
         <FontAwesomeIcon icon={faUser} />&nbsp;
         USER
       </button>

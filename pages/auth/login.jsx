@@ -11,10 +11,10 @@ export default function Login() {
 
   return (
     <AuthLayout>
-      <div className="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="flex min-h-full items-center justify-center items-baseline px-4 py-12 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <form
-            className="border-solid border border-blue-300 rounded p-5 mt-8 space-y-6"
+            className="border-solid border border-blue-300 rounded p-5 mt-8 space-y-6 bg-white"
             action="#"
             method="POST"
           >
@@ -94,7 +94,7 @@ export default function Login() {
               </button>
             </div>
           </form>
-          <div className="border-solid border border-blue-300 p-5 rounded">
+          <div className="border-solid border border-blue-300 p-5 rounded bg-white">
             <div className="text-sm">
               계정이 없으신가요? &nbsp;
               <a

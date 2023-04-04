@@ -24,8 +24,19 @@ const SideBar = ({ menuItems }) => {
   };
 
   return (
-    <Sidebar key={"sidebar"}>
-      <Menu key={"menu"}>
+    <Sidebar 
+    className="bg-blue-200"
+    key={"sidebar"}>
+      <Menu
+      menuItemStyles={{
+        button: {
+              backgroundColor: '',
+              '&:hover': {
+                 backgroundColor: '#bfdbfe',
+              },
+          },
+      }}
+      key={"menu"}>
         {menuItems.map((menuItem, i) => (
           <div key={i}>
             {menuItem.submenu && (
@@ -68,13 +79,13 @@ const SideBar = ({ menuItems }) => {
         ))}
 
         <div
-          className="fold-btn"
+          className="fold-btn bg-blue-50 hover:bg-white"
           key="collapseButton"
           onClick={handleClickBtn}
           style={{ float: "right" }}
         >
           <button>
-            <FontAwesomeIcon icon={isFold ? faChevronRight : faChevronLeft} />
+            <FontAwesomeIcon icon={isFold ? faChevronRight : faChevronLeft} className="text-blue-500" />
           </button>
         </div>
       </Menu>
