@@ -14,7 +14,7 @@ export default function Login() {
       <div className="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <form
-            className="border-solid border border-indigo-600 rounded p-5 mt-8 space-y-6"
+            className="border-solid border border-blue-300 rounded p-5 mt-8 space-y-6"
             action="#"
             method="POST"
           >
@@ -35,8 +35,8 @@ export default function Login() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="ps-2 relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="아이디/이메일"
+                  className="ps-2 relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
+                  placeholder="이메일"
                 />
               </div>
               <div>
@@ -53,7 +53,7 @@ export default function Login() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="ps-2 relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="ps-2 relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   placeholder="비밀번호"
                 />
               </div>
@@ -65,7 +65,7 @@ export default function Login() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                  className="h-4 w-4 rounded border-gray-300 text-blue-300 focus:ring-blue-300"
                 />
                 <label
                   htmlFor="remember-me"
@@ -78,7 +78,7 @@ export default function Login() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  className="font-medium text-blue-300 hover:text-indigo-500"
                 >
                   비밀번호를 잊으셨나요?
                 </a>
@@ -88,18 +88,18 @@ export default function Login() {
             <div>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="group relative flex w-full justify-center rounded-md bg-blue-300 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
               >
                 로그인
               </button>
             </div>
           </form>
-          <div className="border-solid border border-indigo-600 p-5 rounded">
+          <div className="border-solid border border-blue-300 p-5 rounded">
             <div className="text-sm">
               계정이 없으신가요? &nbsp;
               <a
                 href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
+                className="font-medium text-blue-600 hover:text-indigo-500"
                 onClick={() => router.push("/auth/join")}
               >
                 가입하기
