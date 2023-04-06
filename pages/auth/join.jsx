@@ -1,16 +1,22 @@
-import { useRouter } from "next/router";
+import axios from "axios";
 import { useState } from "react";
 import AuthLayout from "../../components/auth/layout";
 
 export default function Join() {
-  const router = useRouter();
-
   const [user, setUser] = useState({
     email: "",
     password: "",
     name: "",
     phone: "",
   });
+
+  const save = async () => {
+    await axios.post(`/api/auth/join`, user)
+    .then(res => {
+      console.log(res)
+      alert(res)
+    })
+  }
 
   const [pwdConfirm, setPwdConfirm] = useState("");
 
@@ -20,7 +26,6 @@ export default function Join() {
         <div className="w-full max-w-md space-y-8">
           <form
             className="border-solid border border-blue-300 rounded p-5 mt-8 space-y-6 bg-white"
-            action="#"
             method="POST"
           >
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
@@ -124,7 +129,7 @@ export default function Join() {
             </div>
             <div>
               <button
-                type="submit"
+                onClick={save}
                 className="group relative flex w-full justify-center rounded-md bg-blue-300 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
               >
                 회원 가입
