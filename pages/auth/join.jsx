@@ -11,6 +11,10 @@ export default function Join() {
   });
 
   const save = async () => {
+    if(!user.email || !user.password || !user.name || !user.phone || !pwdConfirm) {
+      alert('필수 항목을 입력해주세요.')
+      return;
+    }
     await axios.post(`/api/auth/join`, user)
     .then(res => {
       console.log(res)

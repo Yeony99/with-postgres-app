@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import AuthLayout from "../../components/auth/layout";
+import axios from "axios";
 
 export default function Login() {
   const router = useRouter();
@@ -8,6 +9,22 @@ export default function Login() {
     email: "",
     password: "",
   });
+
+  const login = async () => {
+    if(!user.email || !user.password) {
+      alert("필수 항목을 입력해주세요.");
+      return;
+    }
+
+    await axios.post(`/api/auth/login`, user)
+    .then(res => {
+      console.log(res);
+      router.push(`/home`);
+    }).catch(err => {
+      console.log(err)
+      alert(err.response.data.error);
+    })
+  }
 
   return (
     <AuthLayout>
@@ -87,7 +104,8 @@ export default function Login() {
 
             <div>
               <button
-                type="submit"
+              type="button"
+                onClick={login}
                 className="group relative flex w-full justify-center rounded-md bg-blue-300 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300"
               >
                 로그인
