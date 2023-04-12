@@ -5,10 +5,19 @@ import {
   faArrowRightToBracket,
   faIdBadge,
 } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { logout } from "../store/auth";
 
 const UserDropDown = ({ closeToggle }) => {
-  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const handleLogout = async () => {
+    try {
+      await dispatch(logout());
+    } catch (error) {
+      alert(error);
+    }
+  }
 
   const ref = useDetectClickOutside({
     onTriggered: closeToggle,
@@ -33,7 +42,7 @@ const UserDropDown = ({ closeToggle }) => {
               <FontAwesomeIcon icon={faArrowRightToBracket || faArrowRightFromBracket} />
             </div>
             <span style={{ display: "inline-block", marginLeft: "0.75rem" }}>
-              <button type="button" onClick={() => router.push('/auth/login')}>로그인</button>
+              <button type="button" onClick={handleLogout}>로그아웃</button>
             </span>
           </div>
         </li>

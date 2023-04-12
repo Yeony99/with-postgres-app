@@ -2,8 +2,13 @@ import { useState } from "react";
 import UserDropDown from "./userDropDown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
-const User = ({ children }) => {
+const User = () => {
+  const {user} = useSelector(state => state.authReducer)
+  console.log(user, useSelector(state => state))
+  const router = useRouter();
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const handleToggle = (e) => {
     e.preventDefault();
@@ -17,11 +22,11 @@ const User = ({ children }) => {
 
   return (
     <>
-      <button className="user-btn hover:bg-blue-50" onClick={handleToggle}>
+      <button className="user-btn hover:bg-blue-50" onClick={user ? (e) => handleToggle(e) : () => router.push('/auth/login')}>
         <FontAwesomeIcon icon={faUser} />&nbsp;
-        USER
+        {!user ? '로그인' : user.name}
       </button>
-      {toggleDropdown && <UserDropDown closeToggle={closeToggle} />}
+      {(toggleDropdown && user) && <UserDropDown closeToggle={closeToggle} />}
     </>
   );
 };

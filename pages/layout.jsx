@@ -2,10 +2,8 @@ import SideBar from "../components/sidebar";
 import HeaderBar from "../components/header";
 import { menuItems } from "../components/menu";
 import User from "../components/user";
-import { useRouter } from "next/router";
 
 export default function Layout({ children }) {
-  const router = useRouter();
   return (
     <>
       <HeaderBar>
