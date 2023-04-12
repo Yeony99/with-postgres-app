@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap);
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -31,7 +34,7 @@ a:active {
 }
 
 main {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: calc(100% - 55px);
   padding: 1rem;
 }
@@ -53,7 +56,6 @@ main {
   border: none;
   border-radius: 0.75rem 0px 0px 0.75rem;
   padding: 0.25rem 0.25rem 0.25rem 1rem;
-  background-color: #eee;
 }
 .fold-btn:hover {
   background-color: #d1d1d1;
@@ -72,10 +74,6 @@ main {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 1.5rem;
-}
-
-.user-btn:hover {
-  background-color: #eee;
 }
 
 
@@ -110,7 +108,7 @@ main {
   cursor: pointer;
 }
 
-.dropdown ul li:hover {
+/* .dropdown ul li:hover {
   font-weight: 700;
   background: #f2f2f2;
-}
+} */
