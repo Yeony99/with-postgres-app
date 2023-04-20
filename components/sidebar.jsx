@@ -23,23 +23,25 @@ const SideBar = ({ menuItems }) => {
     setFold((prev) => !prev);
   };
 
+  // 임시
+  const userRole = "ADMIN";
+
   return (
-    <Sidebar 
-    className="bg-blue-200"
-    key={"sidebar"}>
+    <Sidebar className="bg-blue-200" key={"sidebar"}>
       <Menu
-      menuItemStyles={{
-        button: {
-              backgroundColor: '',
-              '&:hover': {
-                 backgroundColor: '#bfdbfe',
-              },
+        menuItemStyles={{
+          button: {
+            backgroundColor: "",
+            "&:hover": {
+              backgroundColor: "#bfdbfe",
+            },
           },
-      }}
-      key={"menu"}>
+        }}
+        key={"menu"}
+      >
         {menuItems.map((menuItem, i) => (
           <div key={i}>
-            {menuItem.submenu && (
+            {menuItem.submenu && menuItem.role === userRole && (
               <SubMenu
                 icon={
                   menuItem.icon ? (
@@ -50,19 +52,21 @@ const SideBar = ({ menuItems }) => {
                 label={menuItem.name}
               >
                 {menuItem.submenu.map((submenuItem, j) => (
-                  <MenuItem
-                    icon={<FontAwesomeIcon icon={faMinus} />}
-                    key={j + "sub"}
-                    component={
-                      <Link key={j + "sub-link"} href={submenuItem.link} />
-                    }
-                  >
-                    {submenuItem.name}
-                  </MenuItem>
+                  submenuItem.role === userRole && (
+                    <MenuItem
+                      icon={<FontAwesomeIcon icon={faMinus} />}
+                      key={j + "sub"}
+                      component={
+                        <Link key={j + "sub-link"} href={submenuItem.link} />
+                      }
+                    >
+                      {submenuItem.name}
+                    </MenuItem>
+                  )
                 ))}
               </SubMenu>
             )}
-            {!menuItem.submenu && (
+            {!menuItem.submenu && menuItem.role === userRole && (
               <MenuItem
                 icon={
                   menuItem.icon ? (
@@ -85,7 +89,10 @@ const SideBar = ({ menuItems }) => {
           style={{ float: "right" }}
         >
           <button>
-            <FontAwesomeIcon icon={isFold ? faChevronRight : faChevronLeft} className="text-blue-500" />
+            <FontAwesomeIcon
+              icon={isFold ? faChevronRight : faChevronLeft}
+              className="text-blue-500"
+            />
           </button>
         </div>
       </Menu>
