@@ -6,6 +6,7 @@ import {faHome, faChartArea, faUserAstronaut, faAddressBook} from "@fortawesome/
  * 2. 공지사항은 admin만 작성, 수정, 삭제  / user는 읽기 권한
  * 3. 사용자 관리는 admin만 작성, 읽기, 수정
  * 4. 다른 메뉴는 모두 작성, 수정, 읽기 가능.
+ * 5. SUPER ADMIN이 code(관리자, 유저, 유저그룹)을 관리할 수 있는 화면도 필요.
  */
 const ALL = 'ADMIN' || 'USER' || 'SUPER'
 export const menuItems = [
