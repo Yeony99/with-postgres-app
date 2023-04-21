@@ -1,8 +1,8 @@
-import { GetServerSidePropsContext } from "next";
+// import { GetServerSidePropsContext } from "next";
 import checkPermission from "../../lib/auth/permission";
 
-export const getServerSideProps = (context: GetServerSidePropsContext) => {
-  const userRole = "ADMIN";
+export const getServerSideProps = () => {
+  const userRole = "USER";
   const hasPermission = checkPermission(userRole);
 
   if (!hasPermission) {
